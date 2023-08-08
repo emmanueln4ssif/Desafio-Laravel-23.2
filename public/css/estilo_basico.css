@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to bottom, #8B4513, #D2691E)
+}
+
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.conteudo-destaque {
+    width: 100%;
+    height: 100%;
+}
+
+.esquerda {
+  flex: 1;
+  align-items: center; /* Centraliza verticalmente */
+  background-color: linear-gradient(to bottom, #8B4513, #D2691E)
+  
+}
+
+.direita {
+    flex: 2;
+    background-color: #e0e0e0;
+}
+
+.esquerda img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    object-fit: cover; 
+    
+}
+
+@media screen and (max-width: 770px) {
+
+    .container {
+      flex-direction: column;
+    }
+    
+    .esquerda {
+      display: none;
+    }
+}
+ 
+  
+  
+  
+  
+  
+  
+
+
+
