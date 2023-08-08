@@ -25,7 +25,7 @@
             </div>
         
             <div class="direita">
-                <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0"  style="background-image: linear-gradient(to bottom, #8B4513, #D2691E);" >      
+                <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0"  style="background-image: linear-gradient(to bottom,#58a765 0%, #38703d 28.53%, #133917 75.52%);" >      
                     
                     <div>
                         <a href="/">
