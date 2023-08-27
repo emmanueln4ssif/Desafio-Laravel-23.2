@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Hash;
 
 class UserController extends Controller
 {
@@ -12,7 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $funcionarios = User::all();
+        return view('/admin.funcionarios.index', compact('funcionarios'));
     }
 
     /**
@@ -20,7 +22,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $user = new User();
+        return view('/admin.funcionarios.create', compact('user'));
     }
 
     /**
@@ -28,7 +31,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        User::create($data);
+
+        return redirect()->route('funcionarios.index')->with('success', true);
     }
 
     /**
@@ -36,7 +42,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('/admin.funcionarios.show', compact('user'));
     }
 
     /**
@@ -44,7 +50,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('/admin.funcionarios.edit', compact('user'));
     }
 
     /**
@@ -52,7 +58,12 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $data = $request->all();
+
+        //$data['password'] = Hash::make($data['password']);
+        $user->update($data);
+
+        return redirect()->route('funcionarios.index')->with('success', true);
     }
 
     /**
@@ -60,6 +71,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()->route('funcionarios.index')->with('success', true);
     }
 }
