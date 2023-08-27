@@ -26,7 +26,7 @@ Route::get('/dashboard', function () {
 Route::prefix('funcionarios')->group(function () {
     
     Route::get('', [UserController::class, 'index'])->name('funcionarios.index');
-    Route::get('/funcionarios/create', [UserController::class, 'create'])->name('funcionarios.create');
+    Route::get('/create', [UserController::class, 'create'])->name('funcionarios.create');
     Route::get('/{funcionario}/edit', [UserController::class, 'edit'])->name('funcionarios.edit');
     Route::get('/{funcionario}', [UserController::class, 'show'])->name('funcionarios.show');
     Route::post('', [UserController::class, 'store'])->name('funcionarios.store');
