@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->id();
+            //id funcionario
+            //id animal
+            //id tratamento
+            //id proprietario
+            $table->dateTime('inicio');
+            $table->dateTime('termino');
+            $table->double('custo');
             $table->timestamps();
         });
     }

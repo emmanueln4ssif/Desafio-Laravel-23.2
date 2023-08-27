@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('proprietarios', function (Blueprint $table) {
             $table->id();
+            //id funcionario
+            $table->string('nome');
+            $table->string('email')->unique();
+            $table->text('senha');
+            $table->date('data_nascimento');
+            $table->text('foto_perfil');
+            $table->string('rua');
+            $table->integer('numero');
+            $table->string('cidade');
+            $table->string('uf');
+            $table->string('pais');
+            $table->string('cep');
+            $table->string('cpf')->unique();
+            $table->string('telefone');
             $table->timestamps();
         });
     }
