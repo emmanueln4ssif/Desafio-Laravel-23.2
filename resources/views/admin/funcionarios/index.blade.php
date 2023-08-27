@@ -14,9 +14,9 @@
 
                 <div class="p-6 text-gray-900">
                     
-                    @if(Auth::user()->id != 1)
+                    {{--@if(Auth::user()->id != 1)
                     Você não tem autorização para acessar este conteúdo.
-                    @endif
+                    @endif--}}
 
                     <div class="table-responsive-xl">
 
@@ -24,18 +24,18 @@
 
                             {{--@can('view', $leitor = Auth::user())--}}
                             
-                                <thead>
+                            <thead class="" style = "background-color: rgb(55, 109, 91); color: white">
                                 <tr>
-                                    <th scope="col"><h5>Nome do funcionário<h5></th>
+                                    <th scope="col" style=""><h5>Nome do funcionário<h5></th>
                                     
                                     <th scope="col" style="">
                                         <a href="{{ route('funcionarios.create') }}" class="btn btn-secondary float-right">
-                                            <i class="fas fa-undo-alt"></i>
+                                            </i> <i class="bi bi-plus-lg"></i>
                                             +
                                         </a>
                                     </th>
                                 </tr>
-                                </thead>
+                            </thead>
 
                                 <tbody>
                                     
