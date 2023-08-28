@@ -20,10 +20,12 @@ return new class extends Migration
             $table->string('periodo_trabalho');
             $table->string('rua');
             $table->integer('numero');
+            $table->string('bairro');
             $table->string('cidade');
             $table->string('uf');
             $table->string('pais');
             $table->string('cep');
+            $table->integer('ddd');
             $table->string('telefone');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

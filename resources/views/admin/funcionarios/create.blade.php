@@ -18,6 +18,10 @@
 
                         @csrf
 
+                        <div class="col-12">
+                            <b>Dados pessoais</b>
+                        </div>
+
                         <div class="col-md-8">
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" name="name" class="form-control" id="name">
@@ -33,34 +37,47 @@
                             <input type="text" class="form-control" id="telefone" name="telefone">
                         </div>
 
-
                         <div class="col-md-6">
-                          <label for="email" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="email" name="email">
+                            <label for="inputState" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento">
                         </div>
 
                         <div class="col-md-6">
-                          <label for="senha" class="form-label">Senha</label>
-                          <input type="password" class="form-control" id="password" name="password">
+                            <label for="inputState" class="form-label">Período de trabalho</label>
+                            <select id="periodo_trabalho" name="periodo_trabalho" class="form-select">
+                              <option selected>Selecione...</option>
+                              <option value="Diurno">Diurno</option>
+                              <option value="Noturno">Noturno</option>
+                              <option value="Integral">Integral</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12" style="padding-top: 2%">
+                            <b>Endereço</b>
                         </div>
 
 
-                        <div class="col-10">
+                        <div class="col-8">
                           <label for="rua" class="form-label">Rua</label>
                           <input type="text" class="form-control" id="rua" name="rua">
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-1">
                           <label for="numero" class="form-label">Número</label>
                           <input type="text" class="form-control" id="numero" name="numero">
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-3">
+                            <label for="bairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="bairro" name="bairro">
+                          </div>
+
+                        <div class="col-md-5">
                           <label for="cidade" class="form-label">Cidade</label>
                           <input type="text" class="form-control" id="cidade" name="cidade">
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                           <label for="inputState" class="form-label">Estado</label>
                           <select id="uf" class="form-select" name = "uf">
                             <option selected>Selecione...</option>
@@ -95,20 +112,31 @@
                         </div>
 
                         <div class="col-md-2">
+                            <label for="pais" class="form-label">País</label>
+                            <input type="text" class="form-control" id="pais" name="pais" placeholder=" ">
+                          </div>
+
+                        <div class="col-md-2">
                           <label for="cep" class="form-label">CEP</label>
                           <input type="text" class="form-control" id="cep" name="cep" placeholder="XXXXX-XXX" >
                         </div>
 
-
-                        <div class="col-md-4">
-                            <label for="inputState" class="form-label">Período de trabalho</label>
-                            <select id="periodo_trabalho" name="periodo_trabalho" class="form-select">
-                              <option selected>Selecione...</option>
-                              <option value="Diurno">Diurno</option>
-                              <option value="Noturno">Noturno</option>
-                              <option value="Integral">Integral</option>
-                            </select>
+                        <div class="col-12" style="padding-top: 2%">
+                            <b>Dados de acesso</b>
                         </div>
+
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                          </div>
+  
+                          <div class="col-md-6">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                          </div>
+
+
+                        
 
                         <div class="col-10"></div>
 
