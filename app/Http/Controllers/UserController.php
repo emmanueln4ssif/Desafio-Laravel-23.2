@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Hash;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -40,27 +41,46 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show($id)
     {
-        return view('/admin.funcionarios.show', compact('user'));
+
+        $user = User::find($id);
+
+        $dataNascimento = Carbon::parse($user->data_nascimento)->format('d/m/Y');
+
+        if (!$user) {
+            return redirect()->route('funcionarios.index')->with('error', 'Funcionário não encontrado.');
+        }
+    
+        return view('admin.funcionarios.show', compact('user', 'dataNascimento'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('/admin.funcionarios.edit', compact('user'));
+        $user = User::find($id);
+
+        $dataNascimento = Carbon::parse($user->data_nascimento)->format('d/m/Y');
+
+        return view('/admin.funcionarios.edit', compact('user', 'dataNascimento'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         $data = $request->all();
 
-        //$data['password'] = Hash::make($data['password']);
+        $user = User::find($id);
+
+        $dataNascimento = Carbon::parse($user->data_nascimento)->format('Y/m/d');
+
+        $data['data_nascimento'] = $dataNascimento;
+        $data['password'] = Hash::make($data['password']);
+
         $user->update($data);
 
         return redirect()->route('funcionarios.index')->with('success', true);
@@ -69,10 +89,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(User $user, $id)
     {
+        $user = User::find($id);
         $user->delete();
 
         return redirect()->route('funcionarios.index')->with('success', true);
     }
+    
 }

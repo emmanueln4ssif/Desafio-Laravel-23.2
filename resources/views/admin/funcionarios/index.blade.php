@@ -46,7 +46,7 @@
                                         <tr>
                                             <td>{{$funcionario->name}}</td>
                                             <td>
-                                                <form action="{{ route('funcionarios.destroy', $funcionario->id) }}" method="post">
+                                                <form action="{{ route('funcionarios.destroy', $funcionario->id) }}" method="POST">
                                                     @csrf
                                                         
                                                     <div class="btn-group float-right" role="group" aria-label="...">

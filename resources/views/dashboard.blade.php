@@ -15,7 +15,9 @@
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 10px">
                 <div class="p-6 text-gray-900">
-
+                    <a href="{{ route('funcionarios.index') }}" class="btn btn-dark float-right">
+                        <i class="fas fa-undo-alt"></i> Funcionários
+                    </a>
                 </div>
 
             </div>
