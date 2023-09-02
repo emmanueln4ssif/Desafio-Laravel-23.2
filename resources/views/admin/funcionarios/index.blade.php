@@ -22,7 +22,7 @@
                 <form action="{{ route('funcionarios.index') }}" method="GET">
                     <div class="input-group">
                         <input type="text" class="form-control" name="search" placeholder="Buscar funcionário">
-                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <button type="submit" class="btn btn-success">Buscar</button>
                     </div>
                 </form>
             </div>
@@ -30,8 +30,6 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
                 <div class="p-6 text-gray-900">
-
-                   
                     
                     @if(Auth::user()->id != 1)
                     <div class="container text-center" style="margin-top: 45px; margin-bottom: 45px">
@@ -40,12 +38,12 @@
                     </div>
                     @endif
 
-                    {{--@if (!isset($funcionarios))
+                    @if ($funcionarios->isEmpty())
                     <div class="container text-center" style="margin-top: 45px; margin-bottom: 45px">
-                        <div class="alert" style="font-size: 24px;">Nenhum funcionário foi encontrado.</div>
+                        <div class="alert" style="font-size: 24px;">Nenhum funcionário <b>"{{$query}}"</b> foi encontrado.</div>
                         <a href="{{ route('funcionarios.index') }}" class="btn btn-dark">Voltar</a>
                     </div>
-                    @else--}}
+                    @else
                         
                     
 
@@ -109,6 +107,7 @@
                                     @endforeach
                                 
                                 </tbody>
+                                @endif
 
                             {{--@endcan--}}
                         </table>

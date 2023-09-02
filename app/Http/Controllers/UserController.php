@@ -29,7 +29,7 @@ class UserController extends Controller
             $funcionarios = User::all();
         }
 
-        return view('/admin.funcionarios.index', compact('funcionarios'));
+        return view('/admin.funcionarios.index', compact('funcionarios', 'query'));
     }
 
     /**
