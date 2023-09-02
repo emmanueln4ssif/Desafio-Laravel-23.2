@@ -12,13 +12,21 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $funcionarios = User::all();
+        $query = $request->input('search');
 
+        $funcionarios = User::all();
+       
         if ($funcionarios->count() === 1) {
             $mensagem = 'Ainda não há funcionários cadastrados...';
             return view('admin.funcionarios.index', compact('mensagem'));
+        }
+
+        if ($query) {
+            $funcionarios = User::where('name', 'like', '%' . $query . '%')->get();
+        } else {
+            $funcionarios = User::all();
         }
 
         return view('/admin.funcionarios.index', compact('funcionarios'));
