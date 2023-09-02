@@ -15,6 +15,12 @@ class UserController extends Controller
     public function index()
     {
         $funcionarios = User::all();
+
+        if ($funcionarios->count() === 1) {
+            $mensagem = 'Ainda não há funcionários cadastrados...';
+            return view('admin.funcionarios.index', compact('mensagem'));
+        }
+
         return view('/admin.funcionarios.index', compact('funcionarios'));
     }
 
@@ -35,7 +41,7 @@ class UserController extends Controller
         $data = $request->all();
         User::create($data);
 
-        return redirect()->route('funcionarios.index')->with('success', true);
+        return redirect()->route('funcionarios.index')->with('success', 'Funcionário cadastrado com sucesso!');
     }
 
     /**
@@ -83,7 +89,7 @@ class UserController extends Controller
 
         $user->update($data);
 
-        return redirect()->route('funcionarios.index')->with('success', true);
+        return redirect()->route('funcionarios.index')->with('success', 'Funcionário editado com sucesso!');
     }
 
     /**
@@ -92,9 +98,14 @@ class UserController extends Controller
     public function destroy(User $user, $id)
     {
         $user = User::find($id);
+
+        if (!$user) {
+            return redirect()->route('funcionarios.index')->with('error', 'Funcionário não encontrado.');
+        }
+
         $user->delete();
 
-        return redirect()->route('funcionarios.index')->with('success', true);
+        return redirect()->route('funcionarios.index')->with('success', 'Funcionário excluído com sucesso!');
     }
-    
+
 }

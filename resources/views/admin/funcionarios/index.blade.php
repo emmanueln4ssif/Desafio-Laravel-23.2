@@ -9,22 +9,40 @@
     </x-slot>
 
     <div class="py-12">
+        
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
                 <div class="p-6 text-gray-900">
                     
-                    {{--@if(Auth::user()->id != 1)
-                    Você não tem autorização para acessar este conteúdo.
-                    @endif--}}
+                    @if(Auth::user()->id != 1)
+                    <div class="container text-center" style="margin-top: 45px; margin-bottom: 45px">
+                        <div class="alert" style="font-size: 24px;">Você não tem permissão para acessar este conteúdo.</div>
+                        <a href="{{ route('dashboard') }}" class="btn btn-dark">Voltar</a>
+                    </div>
+                    @endif
 
                     <div class="table-responsive-xl">
 
-                        <table class="table table-striped">
+                        <table class="table table-hover table-striped">
 
                             {{--@can('view', $leitor = Auth::user())--}}
+
+                            @if(isset($mensagem))
+                            <div class="container text-center" style="margin-top: 45px; margin-bottom: 45px">
+                                <div class="alert" style="font-size: 24px;">{{ $mensagem }}</div>
+                                <a href="{{ route('funcionarios.create') }}" class="btn btn-success">Adicionar um funcionário</a>
+                            </div>
+                            @else
                             
-                            <thead class="" style = "background-color: rgb(55, 109, 91); color: white">
+                            <thead class="bg-success text-white" style = "background-color: rgb(55, 109, 91); color: white">
                                 <tr>
                                     <th scope="col" style=""><h5>Nome do funcionário<h5></th>
                                     
@@ -41,7 +59,6 @@
                                     
                                     @foreach ($funcionarios as $funcionario )
                                     
-
                                     @if($funcionario->id != 1 || $funcionario->name != 'Administrador')
                                         <tr>
                                             <td>{{$funcionario->name}}</td>
@@ -72,9 +89,11 @@
                                     @endforeach
                                 
                                 </tbody>
+
                             {{--@endcan--}}
                                     
                         </table>
+                        @endif
 
                     </div>
 
