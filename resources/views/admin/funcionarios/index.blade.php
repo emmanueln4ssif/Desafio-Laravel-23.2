@@ -62,7 +62,7 @@
                             
                             <thead class="bg-success text-white" style = "background-color: rgb(55, 109, 91); color: white">
                                 <tr>
-                                    <th scope="col" style=""><h5>Nome do funcionário<h5></th>
+                                    <th scope="col" style=""><h5>NOME<h5></th>
                                     
                                     <th scope="col" style="">
                                         <a href="{{ route('funcionarios.create') }}" class="btn btn-secondary float-right">
@@ -70,6 +70,7 @@
                                             +
                                         </a>
                                     </th>
+
                                 </tr>
                             </thead>
 
