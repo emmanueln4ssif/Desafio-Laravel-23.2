@@ -41,7 +41,7 @@ class ProprietarioController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        
+
         if ($request->hasFile('foto_perfil')) {
 
             $file = $request->file('foto_perfil');
@@ -67,7 +67,7 @@ class ProprietarioController extends Controller
         $dataNascimento = Carbon::parse($proprietario->data_nascimento)->format('d/m/Y');
 
         if (!$proprietario) {
-            return redirect()->route('proprietarios.index')->with('error', 'Funcionário não encontrado.');
+            return redirect()->route('proprietarios.index')->with('error', 'Proprietário não encontrado.');
         }
     
         return view('admin.proprietarios.show', compact('proprietario', 'dataNascimento'));
@@ -92,8 +92,16 @@ class ProprietarioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Proprietario $proprietario)
+    public function destroy($id)
     {
-        //
+        $proprietario = Proprietario::find($id);
+
+        if (!$proprietario) {
+            return redirect()->route('proprietarios.index')->with('error', 'Proprietário não encontrado.');
+        }
+
+        $proprietario->delete();
+
+        return redirect()->route('proprietarios.index')->with('success', 'Proprietário excluído com sucesso!');
     }
 }

@@ -29,8 +29,6 @@
                             </div>
                         @endif
 
-                        
-                
                         <div class="col-md-4">
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" name="nome" class="form-control" id="nome" value="{{$proprietario->nome}}" readonly>
