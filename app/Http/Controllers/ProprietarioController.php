@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Proprietario;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProprietarioController extends Controller
 {
@@ -76,17 +77,40 @@ class ProprietarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Proprietario $proprietario)
+    public function edit($id)
     {
-        //
+        $proprietario = Proprietario::find($id);
+
+        $dataNascimento = Carbon::parse($proprietario->data_nascimento)->format('d/m/Y');
+
+        return view('/admin.proprietarios.edit', compact('proprietario', 'dataNascimento'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Proprietario $proprietario)
+    public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $user = Proprietario::find($id);
+
+        $dataNascimento = Carbon::parse($user->data_nascimento)->format('Y/m/d');
+        $data['data_nascimento'] = $dataNascimento;
+
+        if ($request->hasFile('foto_perfil')) {
+
+            $file = $request->file('foto_perfil');
+            $file->store('foto_proprietarios');
+            $data['foto_perfil'] = $file->hashName();
+
+        } else {
+            $data['foto_perfil'] = null;
+        }
+
+        $user->update($data);
+
+        return redirect()->route('proprietarios.index')->with('success', 'Proprietário editado com sucesso!');
     }
 
     /**
