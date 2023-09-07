@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Proprietario;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ProprietarioController extends Controller
@@ -54,9 +55,17 @@ class ProprietarioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Proprietario $proprietario)
+    public function show($id)
     {
-        //
+        $proprietario = Proprietario::find($id);
+
+        $dataNascimento = Carbon::parse($proprietario->data_nascimento)->format('d/m/Y');
+
+        if (!$proprietario) {
+            return redirect()->route('proprietarios.index')->with('error', 'Funcionário não encontrado.');
+        }
+    
+        return view('admin.proprietarios.show', compact('proprietario', 'dataNascimento'));
     }
 
     /**

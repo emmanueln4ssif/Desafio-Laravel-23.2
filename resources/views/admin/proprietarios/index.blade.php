@@ -78,7 +78,7 @@
 
                                     @foreach ($proprietarios as $proprietario)
                                         <tr>
-                                            <td>{{ $proprietario->name }}</td>
+                                            <td>{{ $proprietario->nome }}</td>
                                             <td>
                                                 <form action="{{ route('proprietarios.destroy', $proprietario->id) }}"
                                                     method="POST">
