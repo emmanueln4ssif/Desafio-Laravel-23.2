@@ -20,6 +20,14 @@
                             <b>Dados pessoais</b>
                         </div>
 
+                        <div class="col-12">
+                            Foto de perfil
+                        </div>
+
+                        <div class="col-12"> 
+                            <img src="{{ asset('storage/foto_proprietarios/' . $proprietario->foto_perfil) }}" alt="Imagem{{'.'.$proprietario->nome}}">
+                        </div>
+
                         <div class="col-md-6">
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" name="nome" class="form-control" id="nome" value="{{$proprietario->nome}}" readonly>
@@ -40,7 +48,7 @@
                         </div>
 
                         <div class="col-5" style="padding-top: 2%">
-                            <b>Perfil</b>
+                            <b></b>
                         </div>
 
                         <div class="col-md-4">
@@ -59,8 +67,7 @@
                         </div>
 
                         <div class="col-md-5">
-                            <label for="formFile" class="form-label">Enviar foto de perfil</label>
-                            <input class="form-control" type="file" id="formFile" name = "foto_perfil" value="{{$proprietario->foto_perfil}}" readonly>
+                           
                         </div>
                         
 
