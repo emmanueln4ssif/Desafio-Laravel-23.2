@@ -41,14 +41,11 @@ class ProprietarioController extends Controller
     {
         $file = $request->file('foto_perfil');
         
-        $file->storeAs('foto_proprietarios');
+        $file->store('foto_proprietarios');
 
         $data = $request->all();
         $data['foto_perfil'] = $file->hashName();
 
-        $this->create($data);
-
-        $data = $request->all();
         Proprietario::create($data);
 
         return redirect()->route('proprietarios.index')->with('success', 'Proprietário cadastrado com sucesso!');
