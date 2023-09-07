@@ -40,6 +40,8 @@
                     @else
                         <div class="table-responsive-xl">
 
+                            {{ $proprietarios->links('pagination::tailwind') }}
+                            
                             <table class="table table-hover table-striped">
 
                                 {{-- @can('view', $leitor = Auth::user()) --}}
@@ -109,6 +111,8 @@
                                 @endif
 
                             </table>
+
+                            
 
                     @endif
                 </div>
