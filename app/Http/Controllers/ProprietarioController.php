@@ -40,12 +40,17 @@ class ProprietarioController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->file('foto_perfil');
-        
-        $file->store('foto_proprietarios');
-
         $data = $request->all();
-        $data['foto_perfil'] = $file->hashName();
+        
+        if ($request->hasFile('foto_perfil')) {
+
+            $file = $request->file('foto_perfil');
+            $file->store('foto_proprietarios');
+            $data['foto_perfil'] = $file->hashName();
+
+        } else {
+            $data['foto_perfil'] = null;
+        }
 
         Proprietario::create($data);
 
