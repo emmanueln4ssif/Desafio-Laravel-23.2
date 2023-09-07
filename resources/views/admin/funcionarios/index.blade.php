@@ -40,7 +40,7 @@
 
                     @if ($funcionarios->isEmpty())
                     <div class="container text-center" style="margin-top: 45px; margin-bottom: 45px">
-                        <div class="alert" style="font-size: 24px;">Nenhum funcionário <b>"{{$query}}"</b> foi encontrado.</div>
+                        <div class="alert" style="font-size: 24px;">O termo <b>"{{$query}}"</b> não foi encontrado.</div>
                         <a href="{{ route('funcionarios.index') }}" class="btn btn-dark">Voltar</a>
                     </div>
                     @else
