@@ -24,7 +24,7 @@ class ProprietarioController extends Controller
         }
 
         if ($query) {
-            $proprietarios = Proprietario::where('nome', 'like', '%' . $query . '%')->paginate(10);;
+            $proprietarios = Proprietario::where('nome', 'like', '%' . $query . '%')->paginate(10);
         } else {
             $proprietarios = Proprietario::paginate(10);
         }

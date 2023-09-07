@@ -39,8 +39,6 @@
                         </div>
                     @else
                         <div class="table-responsive-xl">
-
-                            {{ $proprietarios->links('pagination::tailwind') }}
                             
                             <table class="table table-hover table-striped">
 
@@ -112,7 +110,9 @@
 
                             </table>
 
-                            
+                            <div class="text-center">
+                                {{ $proprietarios->links('pagination::tailwind') }}
+                            </div>
 
                     @endif
                 </div>

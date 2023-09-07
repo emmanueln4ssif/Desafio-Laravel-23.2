@@ -119,6 +119,11 @@
 
                                 {{-- @endcan --}}
                             </table>
+
+                            <div class="text-center">
+                                {{ $funcionarios->links('pagination::tailwind') }}
+                            </div>
+
                     @endif
 
                 </div>

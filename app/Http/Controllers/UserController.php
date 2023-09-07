@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $query = $request->input('search');
 
-        $funcionarios = User::all();
+        $funcionarios = User::paginate(15);
        
         if ($funcionarios->count() === 1) {
             $mensagem = 'Ainda não há funcionários cadastrados...';
@@ -24,9 +24,9 @@ class UserController extends Controller
         }
 
         if ($query) {
-            $funcionarios = User::where('name', 'like', '%' . $query . '%')->get();
+            $funcionarios = User::where('name', 'like', '%' . $query . '%')->paginate(15);;
         } else {
-            $funcionarios = User::all();
+            $funcionarios = User::paginate(15);
         }
 
         return view('/admin.funcionarios.index', compact('funcionarios', 'query'));
