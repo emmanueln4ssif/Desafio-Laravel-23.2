@@ -57,7 +57,6 @@ class UserController extends Controller
      */
     public function show($id)
     {
-
         $user = User::find($id);
 
         $dataNascimento = Carbon::parse($user->data_nascimento)->format('d/m/Y');
@@ -66,7 +65,7 @@ class UserController extends Controller
             return redirect()->route('funcionarios.index')->with('error', 'Funcionário não encontrado.');
         }
     
-        return view('admin.funcionarios.show', compact('user', 'dataNascimento'));
+        return view('admin.funcionarios.show', compact('user', 'dataNascimento'))->with('success', 'Funcionário editado com sucesso!');;
     }
 
     /**

@@ -14,17 +14,22 @@ class ProprietarioController extends Controller
      */
     public function index(Request $request)
     {
+        $query = $request->input('search');
+
         $proprietarios = Proprietario::all();
 
-        //$query = $request->input('search');
-        if ($proprietarios->count() === 0) {
-
+        if ($proprietarios->count() < 1) {
             $mensagem = 'Ainda não há proprietários cadastrados...';
-            return view('admin.proprietarios.index', compact('mensagem', 'proprietarios'));
-
+            return view('admin.proprietarios.index', compact('mensagem', 'proprietarios', 'query'));
         }
 
-        return view('/admin.proprietarios.index', compact('proprietarios'));
+        if ($query) {
+            $proprietarios = Proprietario::where('nome', 'like', '%' . $query . '%')->get();
+        } else {
+            $proprietarios = Proprietario::all();
+        }
+
+        return view('/admin.proprietarios.index', compact('proprietarios', 'query'));
     }
 
     /**
