@@ -10,9 +10,19 @@ class ProprietarioController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $proprietarios = Proprietario::all();
+
+        //$query = $request->input('search');
+        if ($proprietarios->count() === 0) {
+
+            $mensagem = 'Ainda não há proprietários cadastrados...';
+            return view('admin.proprietarios.index', compact('mensagem', 'proprietarios'));
+
+        }
+
+        return view('/admin.proprietarios.index', compact('proprietarios'));
     }
 
     /**

@@ -63,10 +63,10 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('consultas')->group(function () {
         Route::get('', [ConsultaController::class, 'index'])->name('consultas.index');
-        Route::get('/create', [ProprietarioController::class, 'create'])->name('consultas.create');
-        Route::get('/{funcionario}', [ProprietarioController::class, 'show'])->name('consultas.show');
-        Route::post('', [ProprietarioController::class, 'store'])->name('consultas.store');
-        Route::post('/delete/{consulta}', [ProprietarioController::class, 'destroy'])->name('consultas.destroy');
+        Route::get('/create', [ConsultaController::class, 'create'])->name('consultas.create');
+        Route::get('/{consulta}', [ConsultaController::class, 'show'])->name('consultas.show');
+        Route::post('', [ConsultaController::class, 'store'])->name('consultas.store');
+        Route::post('/delete/{consulta}', [ConsultaController::class, 'destroy'])->name('consultas.destroy');
     });
 
 });
