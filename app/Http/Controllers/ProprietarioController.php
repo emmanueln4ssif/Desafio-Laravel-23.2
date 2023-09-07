@@ -30,7 +30,8 @@ class ProprietarioController extends Controller
      */
     public function create()
     {
-        //
+        $proprietario = new Proprietario();
+        return view('/admin.proprietarios.create', compact('proprietario'));
     }
 
     /**
@@ -38,7 +39,19 @@ class ProprietarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file = $request->file('foto_perfil');
+        
+        $file->storeAs('foto_proprietarios');
+
+        $data = $request->all();
+        $data['foto_perfil'] = $file->hashName();
+
+        $this->create($data);
+
+        $data = $request->all();
+        Proprietario::create($data);
+
+        return redirect()->route('proprietarios.index')->with('success', 'Proprietário cadastrado com sucesso!');
     }
 
     /**

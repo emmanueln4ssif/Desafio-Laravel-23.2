@@ -16,16 +16,17 @@ return new class extends Migration
             //id funcionario
             $table->string('nome');
             $table->string('email')->unique();
-            $table->text('senha');
             $table->date('data_nascimento');
-            $table->text('foto_perfil');
+            $table->string('foto_perfil')->nullable();
             $table->string('rua');
             $table->integer('numero');
+            $table->string('bairro');
             $table->string('cidade');
             $table->string('uf');
             $table->string('pais');
             $table->string('cep');
             $table->string('cpf')->unique();
+            $table->integer('ddd');
             $table->string('telefone');
             $table->timestamps();
         });

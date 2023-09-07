@@ -18,6 +18,9 @@
                     <a href="{{ route('funcionarios.index') }}" class="btn btn-dark float-right">
                         <i class="fas fa-undo-alt"></i> Funcionários
                     </a>
+                    <a href="{{ route('proprietarios.index') }}" class="btn btn-dark float-right">
+                        <i class="fas fa-undo-alt"></i> Proprietários;  
+                    </a>
                 </div>
 
             </div>
