@@ -18,11 +18,26 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $faker = \Faker\Factory::create('pt_BR');
+        $nome = $faker->name;
+        $nome_email = strtolower(str_replace(' ', '', $nome));
+        $nome_email = str_replace('.', '', $nome_email);
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name' => $nome,
+            'email' => $nome_email.'@vetcenter.br',
             'email_verified_at' => now(),
-            'password' => Hash::make('12345678'), // password
+            'password' => Hash::make('12345678'),
+            'data_nascimento' => fake()->date($format = 'Y-m-d', $max = '- 25 years'),
+            'periodo_trabalho' => fake()->randomElement(['Diurno', 'Noturno', 'Integral']),
+            'rua' => $faker->streetName(),
+            'numero' => $faker->buildingNumber(),
+            'cidade' => $faker->city(),
+            'uf' => $faker->stateAbbr(),
+            'bairro' => $faker->cityPrefix(),
+            'pais' => 'Brasil',
+            'cep' => $faker->postcode(),
+            'telefone' => $faker->landline(),
+            'ddd' => $faker->areaCode(),
             'remember_token' => Str::random(10),
         ];
     }

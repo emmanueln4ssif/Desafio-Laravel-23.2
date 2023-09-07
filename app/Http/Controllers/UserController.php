@@ -20,7 +20,7 @@ class UserController extends Controller
        
         if ($funcionarios->count() === 1) {
             $mensagem = 'Ainda não há funcionários cadastrados...';
-            return view('admin.funcionarios.index', compact('mensagem'));
+            return view('admin.funcionarios.index', compact('mensagem', 'funcionarios'));
         }
 
         if ($query) {
