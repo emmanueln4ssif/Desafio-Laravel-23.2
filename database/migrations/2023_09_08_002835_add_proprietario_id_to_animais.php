@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('animais', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome');
-            $table->string('especie');
-            $table->string('raca');
-            $table->date('data_nascimento');
-            $table->timestamps();
+        Schema::table('animais', function (Blueprint $table) {
+            $table->unsignedBigInteger('proprietario_id')->nullable();
+            $table->foreign('proprietario_id')->references('id')->on('proprietarios')->nullOnDelete();
         });
     }
 
@@ -26,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('animais');
+        Schema::table('animais', function (Blueprint $table) {
+            $table->dropForeign('proprietario_id');
+        });
     }
 };
