@@ -22,7 +22,7 @@ class AnimalController extends Controller
        
         if ($animais->count() < 1) {
             $mensagem = 'Ainda não há animais cadastrados...';
-            return view('admin.animais.index', compact('mensagem', 'animais', 'proprietarios'));
+            return view('admin.animais.index', compact('mensagem', 'animais', 'proprietarios', 'query'));
         }
 
         if ($query) {
