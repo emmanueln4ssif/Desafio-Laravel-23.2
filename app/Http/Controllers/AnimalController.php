@@ -18,11 +18,11 @@ class AnimalController extends Controller
         $query = $request->input('search');
         
         $animais =  Animal::all();
-        $animais = Animal::all();
+        $proprietarios = Proprietario::all();
        
-        if ($animais->count() === 1) {
+        if ($animais->count() < 1) {
             $mensagem = 'Ainda não há animais cadastrados...';
-            return view('admin.animais.index', compact('mensagem', 'animais', 'animais'));
+            return view('admin.animais.index', compact('mensagem', 'animais', 'proprietarios'));
         }
 
         if ($query) {
@@ -31,7 +31,7 @@ class AnimalController extends Controller
             $animais = Animal::all();
         }
 
-        return view('/admin.animais.index', compact('animais', 'query', 'animais'));
+        return view('/admin.animais.index', compact('animais', 'query', 'proprietarios'));
     }
 
     /**
