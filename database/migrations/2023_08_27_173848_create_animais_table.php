@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('especie');
             $table->string('raca');
+            $table->string('tratamentos');
             $table->date('data_nascimento');
             $table->timestamps();
         });

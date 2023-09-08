@@ -20,6 +20,9 @@ return new class extends Migration
             $table->dateTime('inicio');
             $table->dateTime('termino');
             $table->double('custo');
+            $table->string('nome_tratamento');
+            $table->string('medicacoes_tratamento');
+            $table->string('repouso_tratamento');
             $table->timestamps();
         });
     }

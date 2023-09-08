@@ -51,6 +51,8 @@ class AnimalController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        //dd($data);
+        
         Animal::create($data);
 
         return redirect()->route('animais.index')->with('success', 'Animal cadastrado com sucesso!');

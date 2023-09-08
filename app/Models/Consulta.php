@@ -17,15 +17,12 @@ class Consulta extends Model
         'inicio',
         'termino',
         'custo',
+        'nome_tratamento',
+        'medicacoes_tratamento',
+        'repouso_tratamento',
         'user_id',
-        'animal_id',
-        'proprietario_id'
+        'animal_id'
     ]; 
-
-    public function proprietario(): BelongsTo
-    {
-        return $this->belongsTo(Proprietario::class);
-    }
 
     public function animal(): BelongsTo
     {

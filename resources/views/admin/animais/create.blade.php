@@ -32,17 +32,17 @@
                             <input type="date" class="form-control" id="data_nascimento" name="data_nascimento">
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="especie" class="form-label">Espécie</label>
                             <input type="text" class="form-control" id="especie" name="especie">
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="raca" class="form-label">Raça</label>
                             <input type="text" class="form-control" id="raca" name="raca">
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="inputProprietario" class="form-label">Proprietário</label>
                           <select id="proprietario_id" class="form-select" name = "proprietario_id">
                             <option selected>Selecione...</option>
@@ -53,9 +53,18 @@
 
                             </option>
                           </select>
-                          </div>
+                        </div>
 
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <div class="col-12">
+                            <b>Tratamentos realizados</b>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="raca" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="tratamentos" name="tratamentos">
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 3%">
 
                             <a href="{{ route('animais.index') }}" class="btn btn-dark float-right">
                                 <i class="fas fa-undo-alt"></i> Voltar

@@ -32,9 +32,4 @@ class Proprietario extends Model
         return $this->hasMany(Animal::class);
     }
 
-    public function consultas(): HasMany
-    {
-        return $this->hasMany(Consulta::class);
-    }
-
 }

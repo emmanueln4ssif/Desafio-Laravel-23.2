@@ -18,15 +18,13 @@
 
                         @csrf
 
+                        <div class="col-12">
+                            <b>Dados da consulta</b>
+                        </div>
+
                         <div class="col-md-6">
                             <label for="nasc" class="form-label">Funcionário responsável</label>
                             <input type="text" class="form-control" id="funcionario_id" name="funcionario_id" value = {{$funcionario->name}} readonly>
-                        </div>
-
-                        <div class="col-md-6"></div>
-
-                        <div class="col-12">
-                            <b>Dados da consulta</b>
                         </div>
 
                         <div class="col-md-6">
@@ -41,8 +39,6 @@
                           </select>
                         </div>
 
-                        <div class="col-md-6"></div>
-
                         <div class="col-md-6">
                             <label for="inicio" class="form-label">Início</label>
                             <input type="datetime-local" class="form-control" id="data_nascimento" name="inicio">
@@ -53,10 +49,25 @@
                             <input type="datetime-local" class="form-control" id="especie" name="termino">
                         </div>
 
-                        <div class="col-md-10">
-                            <label for="tratamento" class="form-label">Tratamentos realizados</label>
-                            <input type="text" class="form-control" id="tratamento" name="tratamentos">
+                        <div class="col-12">
+                            <b>Tratamento realizado</b>
                         </div>
+
+                        <div class="col-md-5">
+                            <label for="raca" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="tratamentos" name="nome_tratamento">
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="raca" class="form-label">Medicações</label>
+                            <input type="text" class="form-control" id="tratamentos" name="medicacoes_tratamento">
+                        </div>
+
+                        <div class="col-md-2">
+                            <label for="raca" class="form-label">Repouso</label>
+                            <input type="text" class="form-control" id="tratamentos" name="repouso_tratamento">
+                        </div>
+
 
                         <div class="col-md-2">
                             <label for="custo" class="form-label">Custo (R$)</label>

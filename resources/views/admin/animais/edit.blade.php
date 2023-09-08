@@ -49,6 +49,15 @@
                           </select>
                         </div>
 
+                        <div class="col-12">
+                            <b>Tratamentos realizados</b>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="raca" class="form-label">Nome</label>
+                            <input type="textarea" class="form-control" id="tratamentos" name="tratamentos" value = "{{$animal->tratamentos}}">
+                        </div>
+
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
                             <a href="{{ route('animais.index') }}" class="btn btn-dark float-right">
