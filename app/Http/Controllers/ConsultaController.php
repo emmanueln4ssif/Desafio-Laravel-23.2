@@ -25,6 +25,10 @@ class ConsultaController extends Controller
             $consultas = Consulta::where('user_id', $user)->get();
         }
 
+        foreach($consultas as $consulta){
+            $consulta->inicio = Carbon::parse($consulta->inicio)->format('d/m/Y  h:i A');
+        }
+
         return view('/admin.consultas.index', compact('consultas', 'query'));
     }
 
@@ -60,10 +64,10 @@ class ConsultaController extends Controller
         $consulta = Consulta::find($id);
 
         $hora_inicio = Carbon::parse($consulta->inicio)->format('h:i A');
-        $dia_inicio = Carbon::parse($consulta->inicio)->format('d-m-Y');
+        $dia_inicio = Carbon::parse($consulta->inicio)->format('d/m/Y');
 
         $hora_termino = Carbon::parse($consulta->termino)->format('h:i A');
-        $dia_termino = Carbon::parse($consulta->termino)->format('d-m-Y');
+        $dia_termino = Carbon::parse($consulta->termino)->format('d/m/Y');
 
         if (!$consulta) {
             return redirect()->route('consultas.index')->with('error', 'Consulta não encontrada.');

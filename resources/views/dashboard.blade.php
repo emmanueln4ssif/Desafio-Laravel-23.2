@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                    
                             <!-- Card 2 -->
                             <div class="col-md-3">
                                 <div class="card bg-dark text-white">
@@ -45,6 +45,7 @@
                                     </div>
                                 </div>
                             </div>
+                        
 
                             <!-- Card 3 -->
                             <div class="col-md-3">
