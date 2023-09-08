@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Consulta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ConsultaController extends Controller
 {
@@ -12,7 +13,15 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user()->id;
+
+        if($user === 1){
+            $consultas = Consulta::all();
+        } else {
+            $consultas = Consulta::where('user_id', $user)->get();
+        }
+
+        return view('/admin.consultas.index', compact('consultas'));
     }
 
     /**
@@ -20,7 +29,9 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        //
+        $consulta = new Consulta();
+
+        return view('/admin.consultas.create', compact('consultas'));
     }
 
     /**
@@ -28,15 +39,24 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Consulta::create($data);
+
+        return redirect()->route('consultas.index')->with('success', 'Consulta agendada com sucesso!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Consulta $consulta)
+    public function show($id)
     {
-        //
+        $consulta = Consulta::find($id);
+
+        if (!$consulta) {
+            return redirect()->route('consultas.index')->with('error', 'Consulta não encontrada.');
+        }
+    
+        return view('admin.consultas.show', compact('consultas'));
     }
 
     /**
@@ -58,8 +78,16 @@ class ConsultaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Consulta $consulta)
+    public function destroy($id)
     {
-        //
+        $consulta = Consulta::find($id);
+
+        if (!$consulta = Consulta::find($id)) {
+            return redirect()->route('consultas.index')->with('error', 'Consulta não encontrada.');
+        }
+
+        $consulta->delete();
+
+        return redirect()->route('consultas.index')->with('success', 'Consulta excluída com sucesso!');
     }
 }
