@@ -48,7 +48,7 @@
                                 <div class="col-1">
                                     
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2"> 
                                     <img src="{{ asset('storage/foto_proprietarios/' . $proprietario->foto_perfil) }}" alt="Imagem{{'.'.$proprietario->nome}}" width="150" height="150" style="border-radius: 50%">
                                 </div>
         

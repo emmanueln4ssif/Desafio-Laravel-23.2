@@ -51,7 +51,7 @@ class ProprietarioController extends Controller
         if ($request->hasFile('foto_perfil')) {
 
             $file = $request->file('foto_perfil');
-            $file->store('foto_proprietarios');
+            $file->store('public/foto_proprietarios');
             $data['foto_perfil'] = $file->hashName();
 
         } else {
