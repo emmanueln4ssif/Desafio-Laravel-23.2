@@ -10,11 +10,14 @@ class Animal extends Model
 {
     use HasFactory;
 
+    protected $table = "animais";
+
     protected $fillable = [
         'nome',
         'especie',
         'raca',
-        'data_nascimento'
+        'data_nascimento',
+        'proprietario_id'
     ]; 
 
     public function proprietario(): BelongsTo
