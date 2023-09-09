@@ -16,6 +16,12 @@ class PDFController extends Controller
 
         $consultas = Consulta::all();
 
+        foreach ($consultas as $consulta){
+            $dia = Carbon::parse($consulta->inicio)->format('d/m/Y');
+            $hora = Carbon::parse($consulta->inicio)->format('H:i');
+            $consulta->inicio = $dia . ' às ' . $hora;
+        }
+
         $now = Carbon::now($tz = 'America/Sao_Paulo');
         $dia = $now->format('d/m/Y');
         $hora = $now->format('H:i:s');
