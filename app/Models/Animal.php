@@ -37,9 +37,4 @@ class Animal extends Model
         return $this->hasMany(Consulta::class);
     }
 
-    //public function tratamentos(): HasMany
-    //{
-      //  return $this->hasMany(Tratamento::class);
-    //}
-
 }

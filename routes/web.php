@@ -4,6 +4,7 @@ use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProprietarioController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -68,6 +69,9 @@ Route::middleware('auth')->group(function () {
         Route::post('', [ConsultaController::class, 'store'])->name('consultas.store');
         Route::post('/delete/{consulta}', [ConsultaController::class, 'destroy'])->name('consultas.destroy');
     });
+
+        Route::get('consulta/relatorio-pdf', [PDFController::class, 'geraPDF'])->name('consultas.pdf');
+
 
 });
 

@@ -65,7 +65,7 @@
                                                 <a href="{{ route('proprietarios.create') }}"
                                                     class="btn btn-dark float-right">
                                                     </i> <i class="bi bi-plus-lg"></i>
-                                                    <b>+</b>
+                                                    <b></b>
                                                 </a>
                                             </th>
 
