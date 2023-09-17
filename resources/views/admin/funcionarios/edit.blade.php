@@ -26,27 +26,27 @@
 
                         <div class="col-md-8">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" name="name" class="form-control" id="name" value="{{$user->name}}">
+                            <input type="text" name="name" class="form-control" id="name" value="{{$user->name}}" required>
                         </div>
 
                         <div class="col-md-1">
                             <label for="ddd" class="form-label">DDD</label>
-                            <input type="text"  class="form-control" id="ddd" name="ddd" value="{{$user->ddd}}">
+                            <input type="text"  class="form-control" id="ddd" name="ddd" value="{{$user->ddd}}" required>
                         </div>
 
                         <div class="col-md-3">
                             <label for="telefone" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="telefone" name="telefone" value="{{$user->telefone}}">
+                            <input type="text" class="form-control" id="telefone" name="telefone" value="{{$user->telefone}}" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Data de Nascimento</label>
-                            <input type="text" class="form-control" id="data_nascimento" name="data_nascimento" value="{{$dataNascimento}}">
+                            <input type="text" class="form-control" id="data_nascimento" name="data_nascimento" value="{{$dataNascimento}}" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Período de trabalho</label>
-                            <select id="periodo_trabalho" name="periodo_trabalho" class="form-select">
+                            <select id="periodo_trabalho" name="periodo_trabalho" class="form-select" required>
                               <option selected>{{$user->periodo_trabalho}}</option>
                               <option value="Diurno">Diurno</option>
                               <option value="Noturno">Noturno</option>
@@ -61,27 +61,27 @@
 
                         <div class="col-8">
                           <label for="rua" class="form-label">Rua</label>
-                          <input type="text" class="form-control" id="rua" name="rua" value="{{$user->rua}}">
+                          <input type="text" class="form-control" id="rua" name="rua" value="{{$user->rua}}" required>
                         </div>
 
                         <div class="col-1">
                           <label for="numero" class="form-label">Número</label>
-                          <input type="text" class="form-control" id="numero" name="numero" value="{{$user->numero}}">
+                          <input type="text" class="form-control" id="numero" name="numero" value="{{$user->numero}}" required>
                         </div>
 
                         <div class="col-3">
                             <label for="bairro" class="form-label">Bairro</label>
-                            <input type="text" class="form-control" id="bairro" name="bairro" value="{{$user->bairro}}">
+                            <input type="text" class="form-control" id="bairro" name="bairro" value="{{$user->bairro}}" required>
                           </div>
 
                         <div class="col-md-5">
                           <label for="cidade" class="form-label">Cidade</label>
-                          <input type="text" class="form-control" id="cidade" name="cidade" value="{{$user->cidade}}">
+                          <input type="text" class="form-control" id="cidade" name="cidade" value="{{$user->cidade}}" required>
                         </div>
 
                         <div class="col-md-3">
                             <label for="inputState" class="form-label">Estado</label>
-                            <select id="uf" class="form-select" name = "uf">
+                            <select id="uf" class="form-select" name = "uf" required>
                               <option selected>{{$user->uf}}</option>
                               <option value="AC">Acre</option>
                               <option value="AL">Alagoas</option>
@@ -115,12 +115,12 @@
 
                         <div class="col-md-2">
                             <label for="pais" class="form-label">País</label>
-                            <input type="text" class="form-control" id="pais" name="pais" value="{{$user->pais}}">
+                            <input type="text" class="form-control" id="pais" name="pais" value="{{$user->pais}}" required>
                           </div>
 
                         <div class="col-md-2">
                           <label for="cep" class="form-label">CEP</label>
-                          <input type="text" class="form-control" id="cep" name="cep" value="{{$user->cep}}">
+                          <input type="text" class="form-control" id="cep" name="cep" value="{{$user->cep}}" required>
                         </div>
 
                         <div class="col-12" style="padding-top: 2%">
@@ -129,12 +129,12 @@
 
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="{{$user->email}}">
+                            <input type="email" class="form-control" id="email" name="email" value="{{$user->email}}" required>
                           </div>
   
                           <div class="col-md-6">
                             <label for="senha" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" name="password" value="{{$user->password}}">
+                            <input type="password" class="form-control" id="password" name="password" value="{{$user->password}}" required>
                           </div>
 
 

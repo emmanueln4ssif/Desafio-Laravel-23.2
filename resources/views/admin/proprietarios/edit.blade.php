@@ -24,17 +24,17 @@
 
                         <div class="col-md-6">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" name="nome" class="form-control" id="nome" value="{{$proprietario->nome}}">
+                            <input type="text" name="nome" class="form-control" id="nome" value="{{$proprietario->nome}}" required>
                         </div>
 
                         <div class="col-md-3">
                             <label for="inputState" class="form-label">Data de Nascimento</label>
-                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" value="{{$proprietario->data_nascimento}}">
+                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" value="{{$proprietario->data_nascimento}}" required>
                         </div>
 
                         <div class="col-md-3">
                             <label for="senha" class="form-label">CPF</label>
-                            <input type="text" class="form-control" id="cpf" name="cpf" value="{{$proprietario->cpf}}">
+                            <input type="text" class="form-control" id="cpf" name="cpf" value="{{$proprietario->cpf}}" required>
                         </div>
 
                         <div class="col-7" style="padding-top: 2%">
@@ -47,17 +47,17 @@
 
                         <div class="col-md-4">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="{{$proprietario->email}}">
+                            <input type="email" class="form-control" id="email" name="email" value="{{$proprietario->email}}" required>
                         </div>
 
                         <div class="col-md-1">
                             <label for="ddd" class="form-label">DDD</label>
-                            <input type="text"  class="form-control" id="ddd" name="ddd" value="{{$proprietario->ddd}}">
+                            <input type="text"  class="form-control" id="ddd" name="ddd" value="{{$proprietario->ddd}}" required>
                         </div>
 
                         <div class="col-md-2">
                             <label for="telefone" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="telefone" name="telefone" value="{{$proprietario->telefone}}">
+                            <input type="text" class="form-control" id="telefone" name="telefone" value="{{$proprietario->telefone}}" required>
                         </div>
 
                         <div class="col-md-5">
@@ -73,27 +73,27 @@
 
                         <div class="col-8">
                           <label for="rua" class="form-label">Rua</label>
-                          <input type="text" class="form-control" id="rua" name="rua" value="{{$proprietario->rua}}">
+                          <input type="text" class="form-control" id="rua" name="rua" value="{{$proprietario->rua}}" required>
                         </div>
 
                         <div class="col-1">
                           <label for="numero" class="form-label">Número</label>
-                          <input type="text" class="form-control" id="numero" name="numero" value="{{$proprietario->numero}}">
+                          <input type="text" class="form-control" id="numero" name="numero" value="{{$proprietario->numero}}" required>
                         </div>
 
                         <div class="col-3">
                             <label for="bairro" class="form-label">Bairro</label>
-                            <input type="text" class="form-control" id="bairro" name="bairro" value="{{$proprietario->bairro}}">
+                            <input type="text" class="form-control" id="bairro" name="bairro" value="{{$proprietario->bairro}}" required>
                           </div>
 
                         <div class="col-md-5">
                           <label for="cidade" class="form-label">Cidade</label>
-                          <input type="text" class="form-control" id="cidade" name="cidade" value="{{$proprietario->cidade}}">
+                          <input type="text" class="form-control" id="cidade" name="cidade" value="{{$proprietario->cidade}}" required>
                         </div>
 
                         <div class="col-md-3">
                           <label for="inputState" class="form-label">Estado</label>
-                          <select id="uf" class="form-select" name = "uf" >
+                          <select id="uf" class="form-select" name = "uf" required>
                             <option selected>{{$proprietario->uf}}</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
@@ -127,12 +127,12 @@
 
                         <div class="col-md-2">
                             <label for="pais" class="form-label">País</label>
-                            <input type="text" class="form-control" id="pais" name="pais" value="{{$proprietario->pais}}">
+                            <input type="text" class="form-control" id="pais" name="pais" value="{{$proprietario->pais}}" required>
                           </div>
 
                         <div class="col-md-2">
                           <label for="cep" class="form-label">CEP</label>
-                          <input type="text" class="form-control" id="cep" name="cep" value="{{$proprietario->cep}}">
+                          <input type="text" class="form-control" id="cep" name="cep" value="{{$proprietario->cep}}" required>
                         </div>
 
                         <div class="col-10"></div>

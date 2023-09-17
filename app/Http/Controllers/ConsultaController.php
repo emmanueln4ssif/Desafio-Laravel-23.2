@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ConsultaRequest;
 use App\Models\Animal;
 use App\Models\Consulta;
 use Carbon\Carbon;
@@ -47,9 +48,9 @@ class ConsultaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ConsultaRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $data['user_id'] = Auth::user()->id;
         Consulta::create($data);
 

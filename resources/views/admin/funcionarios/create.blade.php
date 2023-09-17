@@ -26,27 +26,27 @@
 
                         <div class="col-md-8">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" name="name" class="form-control" id="name">
+                            <input type="text" name="name" class="form-control" id="name" required>
                         </div>
 
                         <div class="col-md-1">
                             <label for="ddd" class="form-label">DDD</label>
-                            <input type="text"  class="form-control" id="ddd" name="ddd">
+                            <input type="text"  class="form-control" id="ddd" name="ddd" required>
                         </div>
 
                         <div class="col-md-3">
                             <label for="telefone" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="telefone" name="telefone">
+                            <input type="text" class="form-control" id="telefone" name="telefone" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Data de Nascimento</label>
-                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento">
+                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="inputState" class="form-label">Período de trabalho</label>
-                            <select id="periodo_trabalho" name="periodo_trabalho" class="form-select">
+                            <select id="periodo_trabalho" name="periodo_trabalho" class="form-select" required>
                               <option selected>Selecione...</option>
                               <option value="Diurno">Diurno</option>
                               <option value="Noturno">Noturno</option>
@@ -61,27 +61,27 @@
 
                         <div class="col-8">
                           <label for="rua" class="form-label">Rua</label>
-                          <input type="text" class="form-control" id="rua" name="rua">
+                          <input type="text" class="form-control" id="rua" name="rua" required>
                         </div>
 
                         <div class="col-1">
                           <label for="numero" class="form-label">Número</label>
-                          <input type="text" class="form-control" id="numero" name="numero">
+                          <input type="text" class="form-control" id="numero" name="numero" required>
                         </div>
 
                         <div class="col-3">
                             <label for="bairro" class="form-label">Bairro</label>
-                            <input type="text" class="form-control" id="bairro" name="bairro">
+                            <input type="text" class="form-control" id="bairro" name="bairro" required>
                           </div>
 
                         <div class="col-md-5">
                           <label for="cidade" class="form-label">Cidade</label>
-                          <input type="text" class="form-control" id="cidade" name="cidade">
+                          <input type="text" class="form-control" id="cidade" name="cidade" required>
                         </div>
 
                         <div class="col-md-3">
                           <label for="inputState" class="form-label">Estado</label>
-                          <select id="uf" class="form-select" name = "uf">
+                          <select id="uf" class="form-select" name = "uf" required>
                             <option selected>Selecione...</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
@@ -115,12 +115,12 @@
 
                         <div class="col-md-2">
                             <label for="pais" class="form-label">País</label>
-                            <input type="text" class="form-control" id="pais" name="pais" placeholder=" ">
+                            <input type="text" class="form-control" id="pais" name="pais" placeholder=" " required>
                           </div>
 
                         <div class="col-md-2">
                           <label for="cep" class="form-label">CEP</label>
-                          <input type="text" class="form-control" id="cep" name="cep" placeholder="XXXXX-XXX" >
+                          <input type="text" class="form-control" id="cep" name="cep" placeholder="XXXXX-XXX" required>
                         </div>
 
                         <div class="col-12" style="padding-top: 2%">
@@ -129,16 +129,13 @@
 
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email">
+                            <input type="email" class="form-control" id="email" name="email" required>
                           </div>
   
                           <div class="col-md-6">
                             <label for="senha" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" name="password">
+                            <input type="password" class="form-control" id="password" name="password" required>
                           </div>
-
-
-                        
 
                         <div class="col-10"></div>
 

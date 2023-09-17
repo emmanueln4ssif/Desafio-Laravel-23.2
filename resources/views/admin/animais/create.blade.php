@@ -24,34 +24,34 @@
 
                         <div class="col-md-6">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" name="nome" class="form-control" id="nome">
+                            <input type="text" name="nome" class="form-control" id="nome" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="data_nascimento" class="form-label">Data de Nascimento</label>
-                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento">
+                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
                         </div>
 
                         <div class="col-md-4">
                             <label for="especie" class="form-label">Espécie</label>
-                            <input type="text" class="form-control" id="especie" name="especie">
+                            <input type="text" class="form-control" id="especie" name="especie" required>
                         </div>
 
                         <div class="col-md-4">
                             <label for="raca" class="form-label">Raça</label>
-                            <input type="text" class="form-control" id="raca" name="raca">
+                            <input type="text" class="form-control" id="raca" name="raca" required>
                         </div>
 
                         <div class="col-md-4">
                             <label for="inputProprietario" class="form-label">Proprietário</label>
-                          <select id="proprietario_id" class="form-select" name = "proprietario_id">
+                          <select id="proprietario_id" class="form-select" name = "proprietario_id" required>
                             <option selected>Selecione...</option>
 
                                 @foreach ($proprietarios as $proprietario)
-                                    <option value="{{$proprietario->id}}">{{$proprietario->nome.' CPF: '.$proprietario->cpf.}}
+                                    <option value="{{$proprietario->id}}">{{$proprietario->nome.' - CPF: '.$proprietario->cpf}}
                                 @endforeach
 
-                            </option>
+                            
                           </select>
                         </div>
 
@@ -61,7 +61,7 @@
 
                         <div class="col-md-5">
                             <label for="raca" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="tratamentos" name="tratamentos">
+                            <input type="text" class="form-control" id="tratamentos" name="tratamentos" required>
                         </div>
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 3%">

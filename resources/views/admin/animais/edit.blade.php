@@ -24,27 +24,27 @@
 
                         <div class="col-md-6">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" name="nome" class="form-control" id="nome" value = "{{$animal->nome}}">
+                            <input type="text" name="nome" class="form-control" id="nome" value = "{{$animal->nome}}" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="nasc" class="form-label">Data de Nascimento</label>
-                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" value = "{{$animal->data_nascimento}}">
+                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" value = "{{$animal->data_nascimento}}" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="especie" class="form-label">Espécie</label>
-                            <input type="text" class="form-control" id="especie" name="especie" value = "{{$animal->especie}}">
+                            <input type="text" class="form-control" id="especie" name="especie" value = "{{$animal->especie}}" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="raca" class="form-label">Raça</label>
-                            <input type="text" class="form-control" id="raca" name="raca" value = "{{$animal->raca}}">
+                            <input type="text" class="form-control" id="raca" name="raca" value = "{{$animal->raca}}" required>
                         </div>
 
                         <div class="col-md-6">
                             <label for="inputProprietario" class="form-label">Proprietário</label>
-                          <select id="proprietario_id" class="form-select" name = "proprietario_id">
+                          <select id="proprietario_id" class="form-select" name = "proprietario_id" required>
                                 <option value="{{$animal->proprietario->id}}">{{$animal->proprietario->nome .' ('.$animal->proprietario->cpf.')'}}</option>
                           </select>
                         </div>
@@ -55,7 +55,7 @@
 
                         <div class="col-md-12">
                             <label for="raca" class="form-label">Nome</label>
-                            <input type="textarea" class="form-control" id="tratamentos" name="tratamentos" value = "{{$animal->tratamentos}}">
+                            <input type="textarea" class="form-control" id="tratamentos" name="tratamentos" value = "{{$animal->tratamentos}}" required>
                         </div>
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
