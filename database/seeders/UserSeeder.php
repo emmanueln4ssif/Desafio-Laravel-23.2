@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'name' => "Administrador",
             'email' => "admin@vetcenter.br",
             'email_verified_at' => now(),
-            'password' => Hash::make('12345678'), // password
+            'password' => Hash::make('12345678'),
             'remember_token' => Str::random(10),
             'data_nascimento' => '2000/01/01',
             'telefone' => '55123456789',

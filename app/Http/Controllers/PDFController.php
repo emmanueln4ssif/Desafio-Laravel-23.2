@@ -13,7 +13,6 @@ class PDFController extends Controller
     public function geraPDF(){
 
         $autor = Auth::user();
-
         $consultas = Consulta::all();
 
         foreach ($consultas as $consulta){
@@ -22,12 +21,42 @@ class PDFController extends Controller
             $consulta->inicio = $dia . ' às ' . $hora;
         }
 
-        $now = Carbon::now($tz = 'America/Sao_Paulo');
-        $dia = $now->format('d/m/Y');
-        $hora = $now->format('H:i:s');
+        $horarioAtual = Carbon::now($tz = 'America/Sao_Paulo');
+        $dia = $horarioAtual->format('d/m/Y');
+        $hora = $horarioAtual->format('H:i:s');
 
-        $pdf = PDF::loadView('admin.consultas.pdf', compact('autor', 'dia', 'hora', 'consultas'))->setPaper('a4', 'portrait');
+        //Pdf::setOption(['dpi' => 150, 'defaultFont' => 'verdana']);
+
+        $datas = PDFController::ordenaData();
+        //dd($datas);
+
+        $pdf = PDF::loadView('admin.consultas.pdf', compact('autor', 'dia', 'hora', 'datas', 'consultas'))->setPaper('a4', 'portrait');
 
         return $pdf->setPaper('a4')->stream('Relatório Geral de Consultas');
+    }
+
+    public function ordenaData(){
+        
+        $eventos = Consulta::orderBy('inicio', 'asc')
+        ->get()
+        ->map(function($evento) {
+            $evento->inicio = Carbon::parse($evento->inicio);
+            return $evento;
+        });
+
+        $eventosPorMes = $eventos->groupBy(function($evento) {
+            return $evento->inicio->format('m-Y');
+        });
+
+        $eventosPorMes = json_decode($eventosPorMes, true);
+
+        $meses = []; // Um array para armazenar os dados dos meses de forma genérica
+
+        foreach ($eventosPorMes as $mes => $eventos) {
+            $meses[$mes] = $eventos;
+        }
+
+        return $eventosPorMes;
+
     }
 }

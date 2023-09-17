@@ -16,7 +16,7 @@ class ProprietarioController extends Controller
     {
         $query = $request->input('search');
 
-        $proprietarios = Proprietario::paginate(10);
+        $proprietarios = Proprietario::latest()->paginate(10);
 
         if ($proprietarios->count() < 1) {
             $mensagem = 'Ainda não há proprietários cadastrados...';
@@ -26,7 +26,7 @@ class ProprietarioController extends Controller
         if ($query) {
             $proprietarios = Proprietario::where('nome', 'like', '%' . $query . '%')->paginate(10);
         } else {
-            $proprietarios = Proprietario::paginate(10);
+            $proprietarios = Proprietario::latest()->paginate(10);
         }
 
         return view('/admin.proprietarios.index', compact('proprietarios', 'query'));

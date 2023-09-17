@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="nasc" class="form-label">Data de Nascimento</label>
+                            <label for="data_nascimento" class="form-label">Data de Nascimento</label>
                             <input type="date" class="form-control" id="data_nascimento" name="data_nascimento">
                         </div>
 
@@ -48,7 +48,7 @@
                             <option selected>Selecione...</option>
 
                                 @foreach ($proprietarios as $proprietario)
-                                    <option value="{{$proprietario->id}}">{{$proprietario->nome.' ('.$proprietario->cpf.')'}}
+                                    <option value="{{$proprietario->id}}">{{$proprietario->nome.' CPF: '.$proprietario->cpf.}}
                                 @endforeach
 
                             </option>
