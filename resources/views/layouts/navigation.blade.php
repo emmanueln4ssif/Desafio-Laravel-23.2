@@ -16,6 +16,35 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                @can('isAdmin', '\App\Models\User')
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('funcionarios.index')" :active="request()->routeIs('funcionarios.index')">
+                        {{ __('Funcionários') }}
+                    </x-nav-link>
+                </div>
+
+                @endcan
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('proprietarios.index')" :active="request()->routeIs('proprietarios.index')">
+                        {{ __('Proprietários') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('animais.index')" :active="request()->routeIs('animais.index')">
+                        {{ __('Animais') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('consultas.index')" :active="request()->routeIs('consultas.index')">
+                        {{ __('Consultas') }}
+                    </x-nav-link>
+                </div>
+
             </div>
 
             <!-- Settings Dropdown -->
