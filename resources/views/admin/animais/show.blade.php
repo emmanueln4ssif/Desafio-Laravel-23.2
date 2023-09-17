@@ -57,7 +57,7 @@
 
                         @for($i = 0; $i < $tamanhoConsultas; $i++)
 
-                            <label for="raca" class="form-label"><b>#{{$i + 2}}</b></label>
+                            <label for="raca" class="form-label"><b>#{{$i+2}}{{') Data: ' . $consultas[$i]->inicio}}</b></label>
                             <div class="col-md-4">
                                 <label for="" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="tratamentos" name="nome_tratamento" value = "{{$consultas[$i]->nome_tratamento}}" readonly>
