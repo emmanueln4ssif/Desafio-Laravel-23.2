@@ -27,7 +27,8 @@ class ConsultaRequest extends FormRequest
             'custo' => 'required|numeric',
             'nome_tratamento' => 'required',
             'medicacoes_tratamento' => 'required',
-            'repouso_tratamento' => 'required|numeric'
+            'repouso_tratamento' => 'required',
+            'animal_id' => 'required|numeric'
         ];
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Animal;
+use App\Models\Consulta;
 use App\Models\Proprietario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -65,13 +66,16 @@ class AnimalController extends Controller
     {
         $animal = Animal::find($id);
 
+        $consultas = Consulta::where('animal_id', $id)->get();
+        $tamanhoConsultas = $consultas->count();
+
         $dataNascimento = Carbon::parse($animal->data_nascimento)->format('d/m/Y');
 
         if (!$animal) {
             return redirect()->route('animais.index')->with('error', 'Animal não encontrado.');
         }
     
-        return view('admin.animais.show', compact('animal', 'dataNascimento'));
+        return view('admin.animais.show', compact('animal', 'dataNascimento', 'consultas', 'tamanhoConsultas'));
     }
 
     /**

@@ -49,10 +49,38 @@
                             <b>Tratamentos realizados</b>
                         </div>
 
+                        <label for="raca" class="form-label"><b>#1</b></label>
                         <div class="col-md-12">
                             <label for="raca" class="form-label">Nome</label>
                             <input type="textarea" class="form-control" id="tratamentos" name="tratamentos" value = "{{$animal->tratamentos}}" readonly>
                         </div>
+
+                        @for($i = 0; $i < $tamanhoConsultas; $i++)
+
+                            <label for="raca" class="form-label"><b>#{{$i + 2}}</b></label>
+                            <div class="col-md-4">
+                                <label for="" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="tratamentos" name="nome_tratamento" value = "{{$consultas[$i]->nome_tratamento}}" readonly>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="" class="form-label">Medicações</label>
+                                <input type="text" class="form-control" id="tratamentos" name="medicacoes_tratamento" value = "{{$consultas[$i]->medicacoes_tratamento}}" readonly>
+                            </div>
+
+                            <div class="col-md-2">
+                                <label for="" class="form-label">Repouso</label>
+                                <input type="text" class="form-control" id="tratamentos" name="repouso_tratamento" value = "{{$consultas[$i]->repouso_tratamento}}" readonly>
+                            </div>
+
+                            <div class="col-md-2">
+                                <label for="custo" class="form-label">Custo (R$)</label>
+                                <input type="number" class="form-control" id="custo" name="custo" value = "{{$consultas[$i]->custo}}" readonly>
+                            </div>
+
+                            <br>
+
+                        @endfor
 
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
