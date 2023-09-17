@@ -18,9 +18,9 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 10px">
                 <div class="p-6 text-gray-900">
 
-                    <div class="container mt-5">
+                    <div class="container mt-5" style="justify-content:center">
                         <div class="row">
-                            <!-- Card 1 -->
+                           
                             <div class="col-md-3">
                                 <div class="card bg-dark text-white">
                                     <img src="https://ictq.com.br/images/Desafios_do_farmac%C3%AAutico_na_manipula%C3%A7%C3%A3o_de_medicamentos_veterin%C3%A1rios.jpg"
@@ -32,8 +32,9 @@
                                     </div>
                                 </div>
                             </div>
+
+                            @can('isAdmin', '\App\Models\User')
                     
-                            <!-- Card 2 -->
                             <div class="col-md-3">
                                 <div class="card bg-dark text-white">
                                     <img src="https://ictq.com.br/images/Desafios_do_farmac%C3%AAutico_na_manipula%C3%A7%C3%A3o_de_medicamentos_veterin%C3%A1rios.jpg"
@@ -45,9 +46,9 @@
                                     </div>
                                 </div>
                             </div>
-                        
 
-                            <!-- Card 3 -->
+                            @endcan
+                        
                             <div class="col-md-3">
                                 <div class="card bg-dark text-white">
                                     <img src="https://ictq.com.br/images/Desafios_do_farmac%C3%AAutico_na_manipula%C3%A7%C3%A3o_de_medicamentos_veterin%C3%A1rios.jpg"
@@ -60,7 +61,6 @@
                                 </div>
                             </div>
 
-                            <!-- Card 4 -->
                             <div class="col-md-3">
                                 <div class="card bg-dark text-white">
                                     <img src="https://ictq.com.br/images/Desafios_do_farmac%C3%AAutico_na_manipula%C3%A7%C3%A3o_de_medicamentos_veterin%C3%A1rios.jpg"

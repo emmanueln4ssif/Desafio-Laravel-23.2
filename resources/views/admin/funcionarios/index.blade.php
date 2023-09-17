@@ -18,7 +18,7 @@
                 </div>
             @endif
 
-
+            @can('isAdmin', '\App\Models\User')
             <div class="mb-3">
                 <form action="{{ route('funcionarios.index') }}" method="GET">
                     <div class="input-group">
@@ -32,6 +32,7 @@
                     </div>
                 </form>
             </div>
+            @endcan
 
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -45,6 +46,8 @@
                             <a href="{{ route('dashboard') }}" class="btn btn-dark">Voltar</a>
                         </div>
                     @endif
+
+                    @can('isAdmin', '\App\Models\User')
 
                     @if ($funcionarios->isEmpty() && Auth::user()->id === 1)
                         <div class="container text-center" style="margin-top: 45px; margin-bottom: 45px">
@@ -155,6 +158,7 @@
                     @endif
 
                 </div>
+                @endcan
 
             </div>
 

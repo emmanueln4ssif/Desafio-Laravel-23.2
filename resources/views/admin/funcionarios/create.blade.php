@@ -1,6 +1,8 @@
 <x-app-layout>
-
-    @include('layouts.cabecalho')
+  
+  @can('isAdmin', '\App\Models\User')
+    
+  @include('layouts.cabecalho')
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -156,5 +158,7 @@
             </div>
         </div>
     </div>
+
+    @endcan
 
 </x-app-layout>

@@ -1,4 +1,6 @@
 <x-app-layout>
+  
+  @can('isAdmin', '\App\Models\User')
 
     @include('layouts.cabecalho')
 
@@ -156,5 +158,7 @@
             </div>
         </div>
     </div>
+
+    @endcan
 
 </x-app-layout>
