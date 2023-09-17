@@ -9,7 +9,7 @@
 
 ## Sobre o desafio:
 
-O desafio tem como intuito treinar os novos membros da Code Jr., afim de familiarizarem melhor com o framework desenvolvendo um sitema de gerenciamento interno de uma academia fictícia, com as funcionalidades definidas no documento de requisitos disponibilizado.
+O desafio tem como intuito treinar os novos membros da Code Jr., afim de familiarizarem melhor com o framework desenvolvendo um sitema de gerenciamento interno de uma clínica veterinária fictícia, com as funcionalidades definidas no documento de requisitos disponibilizado.
 
 ## Trilha de Laravel
 
