@@ -31,7 +31,9 @@
                 <thead>
                     <tr>
                         <th>Data</th>
-                        <th>Nome do Animal</th>
+                        <th>Funcionário</th>
+                        <th>Animal</th>
+                        <th>Proprietário</th>
                         <th>Nome do Tratamento</th>
                         <th>Medicamentos</th>
                         <th>Tempo de Repouso</th>
@@ -41,7 +43,9 @@
                         @foreach($consultas as $consulta)
                             <tr>
                             <td>{{$consulta->inicio}}</td>
+                            <td>{{$consulta->user->name}}</td>
                             <td>{{$consulta->animal->nome}}</td>
+                            <td>{{$consulta->animal->proprietario->nome}}</td>
                             <td>{{$consulta->nome_tratamento}}</td>
                             <td>{{$consulta->medicacoes_tratamento}}</td>
                             <td>{{$consulta->repouso_tratamento}}</td>

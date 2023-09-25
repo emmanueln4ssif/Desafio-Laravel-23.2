@@ -20,7 +20,7 @@
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg" style="margin-bottom: 2%">
                 <div class="p-6 text-gray-900" style="margin-bottom: 2%">
-                    Exibindo todas as consultas agendadas para <b>{{ Auth::user()->name }}</b>.
+                    Exibindo todas as consultas agendadas @if(Auth::user()->id != 1)para <b>{{ Auth::user()->name }}</b>.<br>Para ver todas as consultas do sistema, gere um relatório. @endif
 
                     <a href="{{ route('consultas.pdf') }}" class="btn btn-secondary float-right"
                         style="margin-bottom: 2%">  Gerar relatório <i class="bi bi-filetype-pdf"> </i> 
@@ -58,7 +58,7 @@
                                         style="background-color: rgb(55, 109, 91); color: white">
                                         <tr>
                                             <th scope="col" style="">
-                                                <h5>ID<h5>
+                                                <h5>Funcionário<h5>
                                             </th>
 
                                             <th scope="col" style="">
@@ -83,7 +83,7 @@
 
                                         @foreach ($consultas as $consultas)
                                             <tr>
-                                                <td><b>{{ $consultas->id }}</b></td>
+                                                <td><b>{{ $consultas->user->name }}</b></td>
                                                 <td>{{ $consultas->inicio }}</td>
                                                 <td>{{ $consultas->animal->nome }}</td>
                                                 <td>
